@@ -7,7 +7,7 @@
 int main()
 {
     
-   service *s= newService();
+   uservice *s= newService();
     
     s->ipaddr = "161.105.178.178";
     s->job = "authentification";

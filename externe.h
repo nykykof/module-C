@@ -2,33 +2,33 @@
 #define EXTERNE_H_INCLUDED
 
 
-typedef struct service {
+typedef struct uservice {
     char *name;
     char *ipaddr;
     char * job;
     int port;
-} service;
+} uservice;
 
-int getServicePort(service *s){
+int getServicePort(uservice *s){
 
     return s->port;
 }
 
-char * getServiceJob(service *s){
+char * getServiceJob(uservice *s){
 
     return s->job;
 }
 
-char * getServiceName(service *s){
+char * getServiceName(uservice *s){
 
     return s->name;
 }
-char * getServiceAddr(service *s){
+char * getServiceAddr(uservice *s){
 
     return s->ipaddr;
 }
 
-void affiche_info(service *s){
+void affiche_info(uservice *s){
 
     printf("voici les information du service : \n\n");
     printf("\t - Nom : %s\n",getServiceName(s));
@@ -37,10 +37,10 @@ void affiche_info(service *s){
     printf("\t - Port : %d\n",getServicePort(s));
 
 }
-service * newService(){
+uservice * newService(){
 	
-	service *s =NULL;
-    s= (service *)malloc(sizeof(service));
+	uservice *s =NULL;
+    s= (uservice *)malloc(sizeof(uservice));
     
     return s;
 }
