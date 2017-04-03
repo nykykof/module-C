@@ -3,11 +3,20 @@
 
 
 typedef struct uservice {
-    char *name;
-    char *ipaddr;
-    char * job;
-    int port;
+    char *name = "API Gateway";
+    char *ipaddr = "192.168.0.3";
+    char * job = "main";
+    int port = 8080;
 } uservice;
+
+
+typedef struct requestdata {
+
+	CURLcode *result;
+	char *memory;
+    size_t size;
+	
+}
 
 int getServicePort(uservice *s){
 
