@@ -1,22 +1,27 @@
 #ifndef EXTERNE_H_INCLUDED
 #define EXTERNE_H_INCLUDED
-
+#include <curl/curl.h>
+#include <stdlib.h>
+#include <json/json.h>
 
 typedef struct uservice {
-    char *name = "API Gateway";
-    char *ipaddr = "192.168.0.3";
-    char * job = "main";
-    int port = 8080;
+    char *name ;
+    char *ipaddr;
+    char *job;
+    int port;
 } uservice;
 
-
+typedef struct WriteThis {
+  const char *readptr;
+  long sizeleft;
+}WriteThis;
+ 
 typedef struct requestdata {
-
-	CURLcode *result;
+	CURLcode result;
 	char *memory;
     size_t size;
 	
-}
+} requestdata ;
 
 int getServicePort(uservice *s){
 
@@ -53,4 +58,8 @@ uservice * newService(){
     
     return s;
 }
+
+
+
+
 #endif // EXTERNE_H_INCLUDED
